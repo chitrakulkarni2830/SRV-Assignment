@@ -8,6 +8,9 @@
 
 <title>Premier Schools Exhibition</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/reset.css" />
 <link rel="stylesheet" href="./css/style.css" />
 <link rel="stylesheet" href="./css/responsive.css" />
@@ -18,191 +21,287 @@
 
     <main id="main-content">
 
+    <section class="hero">
 
+        <!-- Header -->
+        <header class="hero__header">
 
-        <section class="hero">
+            <a href="/" class="hero__logo" aria-label="Premier Schools Exhibition Home">
+                <img
+                    src="./assets/logo.png"
+                    alt="Premier Schools Exhibition Logo"
+                    class="hero__logo-image"
+                >
+            </a>
 
+            <a href="#enquiry-form" class="hero__register-btn">
 
-            <header class="hero__header">
+                <span class="hero__register-btn-icon">
+                    ↗
+                </span>
 
-                <a href="/" class="hero__logo" aria-label="Premier Schools Exhibition Home">
-                    <img
-                        src="./assets/logo.png"
-                        alt="Premier Schools Exhibition Logo"
-                        class="hero__logo-image"
+                <span class="hero__register-btn-text">
+                    REGISTER NOW
+                </span>
+
+            </a>
+
+        </header>
+
+        <!-- Hero Body -->
+        <div class="hero__body">
+
+            <!-- Left Content -->
+            <div class="hero__content">
+
+                <h1 class="hero__title">
+                    Discover Gurugram's
+                    <span class="hero__title-highlight">Top 30+ Schools</span>
+                </h1>
+
+                <p class="hero__subtitle">
+                    ALL IN ONE PLACE
+                </p>
+
+                <div class="hero__event-card">
+
+                    <div class="hero__event-location">
+
+                        <strong>Apparel House,</strong>
+
+                        <span>Sec 44, Gurugram</span>
+
+                    </div>
+
+                    <div class="hero__event-divider"></div>
+
+                    <div class="hero__event-date">
+
+                        <strong>2–3 August 2025</strong>
+
+                        <span>Sat–Sun | 10AM – 6PM</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Gallery -->
+            <div class="hero__gallery" aria-hidden="true">
+
+                <!-- Left -->
+                <div class="hero__gallery-column hero__gallery-column--left">
+
+                    <div class="hero__gallery-track">
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/classroom.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/piano.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/smiling.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/student1.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <!-- Duplicated for infinite loop -->
+                        <div class="hero__gallery-item">
+                            <img src="./assets/classroom.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/piano.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/smiling.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/student1.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Middle -->
+                <div class="hero__gallery-column hero__gallery-column--middle">
+
+                    <div class="hero__gallery-track">
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/fun.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/school.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/girl.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/playing.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <!-- Duplicated for infinite loop -->
+                        <div class="hero__gallery-item">
+                            <img src="./assets/fun.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/school.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/girl.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/playing.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+                <div class="hero__gallery-column hero__gallery-column--right">
+
+                    <div class="hero__gallery-track">
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/studying.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/painting.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/cycling.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/reading.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <!-- Duplicated for infinite loop -->
+                        <div class="hero__gallery-item">
+                            <img src="./assets/studying.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/painting.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/cycling.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                        <div class="hero__gallery-item">
+                            <img src="./assets/reading.png" alt="" class="hero__gallery-image">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Form -->
+            <aside class="hero__form" id="enquiry-form">
+
+                <form class="hero__form-container">
+
+                    <h2 class="hero__form-title">
+                        Enquire Now
+                    </h2>
+
+                    <label class="sr-only" for="parent-name">
+                        Parent's Name
+                    </label>
+
+                    <input
+                        id="parent-name"
+                        class="hero__form-input"
+                        type="text"
+                        placeholder="Parent's Name"
+                        required
                     >
 
-                </a>
+                    <label class="sr-only" for="phone-number">
+                        Phone Number
+                    </label>
 
-                <a href="#enquiry-form" class="hero__register-btn">
+                    <input
+                        id="phone-number"
+                        class="hero__form-input"
+                        type="tel"
+                        placeholder="Phone Number"
+                        required
+                    >
 
-                    <span class="hero__register-btn-icon">
-                        
+                    <label class="sr-only" for="grade">
+                        Which grade are you looking for?
+                    </label>
 
-                    </span>
+                    <textarea
+                        id="grade"
+                        class="hero__form-input hero__form-textarea"
+                        rows="4"
+                        placeholder="Which grade are you looking for?"
+                        required
+                    ></textarea>
 
-                    <span class="hero__register-btn-text">
-                            REGISTER NOW
-                    </span>
+                    <button class="hero__submit-btn" type="submit">
 
-                </a>
+                        <span class="hero__submit-btn-icon">
+                            ↗
+                        </span>
 
-            </header>
-           
-        </section>
-    
+                        <span class="hero__submit-btn-text">
+                            SUBMIT
+                        </span>
 
+                    </button>
 
-        <section class = "Event Introduction">
-            <strong>Apparel House,</strong>
+                </form>
 
-            <span>Sec 44, Gurugram</span>
+            </aside>
 
-            </div>
-
-            <div class="hero__event-divider"></div>
-
-            <div class="hero__event-date">
-
-            <strong>2–3 August 2025</strong>
-
-            <span>Sat–Sun | 10AM – 6PM</span>
-
-            </div>
-
-            </div>
         </div>
 
+    </section>
 
-<div class="hero__gallery" aria-hidden="true">
+    </main>
 
-    <!-- Left Column -->
-    <div class="hero__gallery-column hero__gallery-column--left">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const registerBtn = document.querySelector('.hero__register-btn');
+            if (registerBtn) {
+                registerBtn.addEventListener('click', () => {
+                    registerBtn.classList.toggle('clicked');
+                });
+            }
 
-        <div class="hero__gallery-item">
-            <img src="./assets/classroom.png" alt="" class="hero__gallery-image">
-        </div>
-
-        <div class="hero__gallery-item">
-            <img src="./assets/piano.png" alt="" class="hero__gallery-image">
-        </div>
-
-        <div class="hero__gallery-item">
-            <img src="./assets/smiling.png" alt="" class="hero__gallery-image">
-        </div>
-
-        <div class="hero__gallery-item">
-            <img src="./assets/student1.png" alt="" class="hero__gallery-image">
-        </div>
-
-    </div>
-
-    <!-- Middle Column -->
-    <div class="hero__gallery-column hero__gallery-column--middle">
-
-        <div class="hero__gallery-item">
-            <img src="./assets/fun.png" alt="" class="hero__gallery-image">
-        </div>
-
-        <div class="hero__gallery-item">
-            <img src="./assets/school.png" alt="" class="hero__gallery-image">
-        </div>
-
-        <div class="hero__gallery-item">
-            <img src="./assets/girl.png" alt="" class="hero__gallery-image">
-        </div>
-
-        <div class="hero__gallery-item">
-            <img src="./assets/playing.png" alt="" class="hero__gallery-image">
-        </div>
-
-    </div>
-
-    <!-- Right Column -->
-    <div class="hero__gallery-column hero__gallery-column--right">
-
-        <div class="hero__gallery-item">
-            <img src="./assets/studying.png" alt="" class="hero__gallery-image">
-        </div>
-
-        <div class="hero__gallery-item">
-            <img src="./assets/painting.png" alt="" class="hero__gallery-image">
-        </div>
-
-        <div class="hero__gallery-item">
-            <img src="./assets/cycling.png" alt="" class="hero__gallery-image">
-        </div>
-
-        <div class="hero__gallery-item">
-            <img src="./assets/reading.png" alt="" class="hero__gallery-image">
-        </div>
-
-    </div>
-
-</div>
-
-
-<aside class="hero__form" id="enquiry-form">
-
-    <form class="hero__form-container">
-
-        <h2 class="hero__form-title">
-            Enquire Now
-        </h2>
-
-        <label class="sr-only" for="parent-name">
-            Parent's Name
-        </label>
-
-        <input
-            id="parent-name"
-            class="hero__form-input"
-            type="text"
-            placeholder="Parent's Name"
-            required
-        >
-
-        <label class="sr-only" for="phone-number">
-            Phone Number
-        </label>
-
-        <input
-            id="phone-number"
-            class="hero__form-input"
-            type="tel"
-            placeholder="Phone Number"
-            required
-        >
-
-        <label class="sr-only" for="grade">
-            Which grade are you looking for?
-        </label>
-
-        <textarea
-            id="grade"
-            class="hero__form-input hero__form-textarea"
-            rows="4"
-            placeholder="Which grade are you looking for?"
-            required
-        ></textarea>
-
-        <button class="hero__submit-btn" type="submit">
-
-            <span class="hero__submit-btn-icon">
-                ↗
-            </span>
-
-            <span class="hero__submit-btn-text">
-                SUBMIT
-            </span>
-
-        </button>
-
-    </form>
-
-</aside>
-        </section>
-     </main>
-
+            const submitBtn = document.querySelector('.hero__submit-btn');
+            if (submitBtn) {
+                submitBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Optional depending on form logic, but good for demo
+                    submitBtn.classList.toggle('clicked');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
