@@ -71,37 +71,65 @@ textarea {
     height: 70vh;
     min-height: 70vh;
     padding: 0;
+    padding-top: 100px;
+    /* Offset for larger fixed header */
     background: radial-gradient(circle at top left, #040e3b 0%, #361663, #3f186b 100%);
     display: flex;
     flex-direction: column;
 }
 
 .hero__header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 70px;
+    height: 100px;
     background: #ffffff;
     border-radius: 0;
     box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
     padding-right: 4rem;
-    z-index: 50;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.hero__header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background-color: #361663;
+    height: 70px;
 }
 
 .hero__logo {
     position: absolute;
     left: 4rem;
-    top: 0;
+    top: 25px;
     z-index: 100;
+    transition: top 0.3s ease;
 }
 
 .hero__logo-image {
     width: 135px;
+    height: auto;
     display: block;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.617);
     background: #ffffff;
+    transition: all 0.3s ease;
+    transform-origin: top left;
+}
+
+.hero__header.scrolled .hero__logo {
+    top: 8px;
+    /* Centers the 54px logo in the 70px header */
+}
+
+.hero__header.scrolled .hero__logo-image {
+    height: 54px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 input,
@@ -124,18 +152,62 @@ textarea {
     background-color: var(--clr-white);
     height: 48px;
     overflow: hidden;
-    margin-bottom: 22px;
     position: relative;
 }
 
 .hero__register-btn::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(90deg, #361663, #4c2279);
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.3s ease;
+}
+
+.hero__header.scrolled .hero__register-btn {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #361663;
+}
+
+.hero__header.scrolled .hero__register-btn .hero__register-btn-icon {
+    border-color: rgba(54, 22, 99, 0.2);
+    background-color: transparent;
+    color: #361663;
+    transform: rotate(45deg) !important;
+}
+
+/* Remove gradient hover effect and make completely static when scrolled */
+.hero__header.scrolled .hero__register-btn,
+.hero__header.scrolled .hero__register-btn * {
+    transition: none !important;
+}
+
+.hero__header.scrolled .hero__register-btn::before {
+    display: none !important;
+}
+
+.hero__header.scrolled .hero__register-btn:hover,
+.hero__header.scrolled .hero__register-btn:active,
+.hero__header.scrolled .hero__register-btn.clicked {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+.hero__header.scrolled .hero__register-btn.clicked .hero__register-btn-icon,
+.hero__header.scrolled .hero__register-btn:active .hero__register-btn-icon {
+    transform: rotate(45deg) !important;
+    color: #361663 !important;
+}
+
+.hero__header.scrolled .hero__register-btn.clicked .hero__register-btn-text,
+.hero__header.scrolled .hero__register-btn:active .hero__register-btn-text {
+    color: #361663 !important;
 }
 
 .hero__register-btn-icon {
@@ -456,7 +528,7 @@ textarea {
 
 .stats {
     background-color: #ffffff;
-    padding: 5rem 2rem;
+    padding: 5rem 2rem 0;
     display: flex;
     justify-content: center;
     margin-top: -5vh;
@@ -468,7 +540,8 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1500px; /* Increased from 1200px to add more spacing */
+    max-width: 1500px;
+    /* Increased from 1200px to add more spacing */
     width: 100%;
     gap: 2rem;
     flex-wrap: wrap;
@@ -494,7 +567,8 @@ textarea {
     height: auto;
     object-fit: contain;
     z-index: 0;
-    opacity: 1; /* The new SVG has the perfect color */
+    opacity: 1;
+    /* The new SVG has the perfect color */
 }
 
 .stats__text {
@@ -509,4 +583,86 @@ textarea {
     font-weight: 700;
     font-size: 1.3rem;
     color: #051b4c;
+}
+
+
+.schools {
+    padding: 0 2rem 4rem;
+    margin-top: 5rem;
+    background-color: #ffffff;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.schools__title {
+    color: #1a164b;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.schools__marquee {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 2rem;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+    padding-bottom: 0.5rem;
+    /* Space between logos and scrollbar */
+}
+
+.schools__marquee::-webkit-scrollbar {
+    height: 8px;
+}
+
+.schools__marquee::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.schools__marquee::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+
+.schools__marquee::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+}
+
+.schools__marquee:focus {
+    outline: none;
+}
+
+.schools__marquee-track {
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+    padding: 0 2rem;
+    /* Buffer on the edges so it's not glued to the screen */
+}
+
+.schools__marquee-group {
+    display: flex;
+    gap: 2rem;
+    flex-shrink: 0;
+}
+
+.schools__logo {
+    width: 260px;
+    height: 130px;
+    object-fit: contain;
+    border: 1px solid #f0f0f0;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }

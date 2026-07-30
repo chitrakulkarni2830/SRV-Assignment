@@ -321,13 +321,68 @@
         </div>
     </section>
 
+    <!-- Participating Schools Section -->
+    <section class="schools">
+        <h2 class="schools__title">Participating Schools</h2>
+        
+        <!-- Row 1: Left to Right (or Right to Left) -->
+        <div class="schools__marquee" tabindex="0">
+            <div class="schools__marquee-track">
+                <!-- Group 1 -->
+                <div class="schools__marquee-group">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Opposite Direction -->
+        <div class="schools__marquee" tabindex="0">
+            <div class="schools__marquee-track">
+                <!-- Group 1 -->
+                <div class="schools__marquee-group">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                </div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.hero__header');
+            
+            // Handle sticky header scroll effects
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
             const registerBtn = document.querySelector('.hero__register-btn');
             if (registerBtn) {
-                registerBtn.addEventListener('click', () => {
+                registerBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevents the browser from jumping down to the anchor ID
                     registerBtn.classList.toggle('clicked');
                 });
             }
