@@ -610,44 +610,43 @@ textarea {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: hidden;
     margin-bottom: 2rem;
     display: flex;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 transparent;
-    padding-bottom: 0.5rem;
-    /* Space between logos and scrollbar */
-}
-
-.schools__marquee::-webkit-scrollbar {
-    height: 8px;
-}
-
-.schools__marquee::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.schools__marquee::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
-    border-radius: 10px;
-}
-
-.schools__marquee::-webkit-scrollbar-thumb:hover {
-    background-color: #94a3b8;
 }
 
 .schools__marquee:focus {
     outline: none;
+    box-shadow: inset 0 0 0 3px rgba(76, 34, 121, 0.2);
+}
+
+.schools__marquee:hover .schools__marquee-track,
+.schools__marquee:focus-within .schools__marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marqueeLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1rem)); } /* -50% shifts one full group left, minus half the gap */
+}
+
+@keyframes marqueeRight {
+    0% { transform: translateX(calc(-50% - 1rem)); }
+    100% { transform: translateX(0); }
 }
 
 .schools__marquee-track {
     display: flex;
     gap: 2rem;
     width: fit-content;
-    padding: 0 2rem;
-    /* Buffer on the edges so it's not glued to the screen */
+}
+
+.schools__marquee-track--left {
+    animation: marqueeLeft 30s linear infinite;
+}
+
+.schools__marquee-track--right {
+    animation: marqueeRight 30s linear infinite;
 }
 
 .schools__marquee-group {
@@ -1110,5 +1109,37 @@ textarea {
 @media (max-width: 1200px) {
     .footer__container {
         justify-content: flex-start;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY FIXES
+   ========================================= */
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1a123d;
+    color: #ffffff;
+    padding: 8px 16px;
+    z-index: 9999;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

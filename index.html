@@ -325,11 +325,24 @@
     <section class="schools">
         <h2 class="schools__title">Participating Schools</h2>
         
-        <!-- Row 1: Left to Right (or Right to Left) -->
-        <div class="schools__marquee" tabindex="0">
-            <div class="schools__marquee-track">
+        <!-- Row 1: Left to Right -->
+        <div class="schools__marquee" tabindex="0" role="region" aria-label="Participating Schools Row 1">
+            <div class="schools__marquee-track schools__marquee-track--left">
                 <!-- Group 1 -->
                 <div class="schools__marquee-group">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                </div>
+                <!-- Group 2 (Duplicate for seamless loop) -->
+                <div class="schools__marquee-group" aria-hidden="true">
                     <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
                     <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
                     <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
@@ -344,11 +357,24 @@
             </div>
         </div>
 
-        <!-- Row 2: Opposite Direction -->
-        <div class="schools__marquee" tabindex="0">
-            <div class="schools__marquee-track">
+        <!-- Row 2: Right to Left -->
+        <div class="schools__marquee" tabindex="0" role="region" aria-label="Participating Schools Row 2">
+            <div class="schools__marquee-track schools__marquee-track--right">
                 <!-- Group 1 -->
                 <div class="schools__marquee-group">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                    <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
+                </div>
+                <!-- Group 2 (Duplicate for seamless loop) -->
+                <div class="schools__marquee-group" aria-hidden="true">
                     <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
                     <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
                     <img class="schools__logo" src="./assets/schoollogo.png" alt="School">
@@ -397,6 +423,12 @@
                 </div>
             </div>
         </div>
+        <div class="categories__pagination" aria-hidden="true">
+            <span class="categories__dot active"></span>
+            <span class="categories__dot"></span>
+            <span class="categories__dot"></span>
+            <span class="categories__dot"></span>
+        </div>
     </section>
 
     <!-- Pre-schedule Appointments Section -->
@@ -427,7 +459,7 @@
     <section class="features">
         <h2 class="features__title">What Makes This Exhibition a Must-Visit</h2>
         
-        <div class="features__carousel">
+        <div class="features__carousel" role="region" aria-roledescription="carousel" aria-label="Exhibition Features">
             <div class="features__track">
                 
                 <!-- Card 1 -->
